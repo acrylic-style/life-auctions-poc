@@ -3,7 +3,7 @@
   <%- include('header', {title: `Auction details`, script: 'auction-script'}); %>
     <meta name="theme-color" content="#000000" />
     <meta id="meta_title" name="title" content="<%= data.stripped_display_name %>" />
-    <meta id="meta_description" name="description" content="<%= data.stripped_display_name %> (x<%= data.item_data.Count.value %>) is selling for <%= data.price.toLocaleString() %> coins!
+    <meta id="meta_description" name="description" content="<%= data.stripped_display_name %> (x<%= data.item_data.Count.value %>) : <%= data.price.toLocaleString() %>円
 
 <%= data.stripped_item_lore %> " />
   </head>
