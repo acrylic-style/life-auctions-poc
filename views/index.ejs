@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <%- include('header', {title: '/ah', script: 'auctions-script'}); %>
+  <script type="text/javascript">
+    function convertColorCode(s) {
+      s = s.replace(/\u00A70\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #000;"><b>$1</b></span>');
+      s = s.replace(/\u00A71\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #00a;"><b>$1</b></span>');
+      s = s.replace(/\u00A72\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #0a0;"><b>$1</b></span>');
+      s = s.replace(/\u00A73\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #0aa;"><b>$1</b></span>');
+      s = s.replace(/\u00A74\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #a00;"><b>$1</b></span>');
+      s = s.replace(/\u00A75\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #a0a;"><b>$1</b></span>');
+      s = s.replace(/\u00A76\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #fa0;"><b>$1</b></span>');
+      s = s.replace(/\u00A77\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #aaa;"><b>$1</b></span>');
+      s = s.replace(/\u00A78\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #555;"><b>$1</b></span>');
+      s = s.replace(/\u00A79\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #55f;"><b>$1</b></span>');
+      s = s.replace(/\u00A7a\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #5f5;"><b>$1</b></span>');
+      s = s.replace(/\u00A7b\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #5ff;"><b>$1</b></span>');
+      s = s.replace(/\u00A7c\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #f55;"><b>$1</b></span>');
+      s = s.replace(/\u00A7d\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #f5f;"><b>$1</b></span>');
+      s = s.replace(/\u00A7e\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #ff5;"><b>$1</b></span>');
+      s = s.replace(/\u00A7f\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #fff;"><b>$1</b></span>');
+      // ---
+      s = s.replace(/\u00A70(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #000;">$1</span>');
+      s = s.replace(/\u00A71(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #00a;">$1</span>');
+      s = s.replace(/\u00A72(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #0a0;">$1</span>');
+      s = s.replace(/\u00A73(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #0aa;">$1</span>');
+      s = s.replace(/\u00A74(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #a00;">$1</span>');
+      s = s.replace(/\u00A75(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #a0a;">$1</span>');
+      s = s.replace(/\u00A76(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #fa0;">$1</span>');
+      s = s.replace(/\u00A77(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #aaa;">$1</span>');
+      s = s.replace(/\u00A78(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #555;">$1</span>');
+      s = s.replace(/\u00A79(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #55f;">$1</span>');
+      s = s.replace(/\u00A7a(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #5f5;">$1</span>');
+      s = s.replace(/\u00A7b(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #5ff;">$1</span>');
+      s = s.replace(/\u00A7c(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #f55;">$1</span>');
+      s = s.replace(/\u00A7d(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #f5f;">$1</span>');
+      s = s.replace(/\u00A7e(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #ff5;">$1</span>');
+      s = s.replace(/\u00A7f(.*?)(?=\u00A7|\n|$)/gm, '<span style="color: #fff;">$1</span>');
+      s = s.replace(/\u00A7k(.*?)(?=\u00A7|\n|$)/gm, '$1');
+      s = s.replace(/\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '<b>$1</b>');
+      s = s.replace(/\u00A7m(.*?)(?=\u00A7|\n|$)/gm, '<strike>$1</strike>');
+      s = s.replace(/\u00A7n(.*?)(?=\u00A7|\n|$)/gm, '<u>$1</u>');
+      s = s.replace(/\u00A7o(.*?)(?=\u00A7|\n|$)/gm, '<i>$1</i>');
+      s = s.replace(/\u00A7r(.*?)(?=\u00A7|\n|$)/gm, '$1');
+      return s;
+    }
+    function stripColorCode(s) {
+      s = s.replace(/\u00A70\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A71\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A72\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A73\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A74\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A75\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A76\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A77\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A78\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A79\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7a\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7b\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7c\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7d\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7e\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7f\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      // ---
+      s = s.replace(/\u00A70(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A71(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A72(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A73(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A74(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A75(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A76(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A77(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A78(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A79(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7a(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7b(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7c(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7d(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7e(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7f(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7k(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7l(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7m(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7n(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7o(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      s = s.replace(/\u00A7r(.*?)(?=\u00A7|\n|$)/gm, '$1')
+      return s
+    }
+    </script>
+  </head>
+  <body style="background-color: #444444; color: #efefef;">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo left" style="margin-left: 3%">/ah</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li style='font-size: 10px;'>This website is just a Proof of concept. Use at your own risk.</li>
+          <li><input id="search" type="text" oninput="receivedInput();" placeholder="Search" size="50"></input></li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <div class="row container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs" style="background-color: #222222;">
+            <li class="tab col s3"><a href="#allAuctions">期限切れを含むすべてのアイテム</a></li>
+            <li class="tab col s3"><a class="active" href="#activeAuctions">現在売っているアイテム</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="allAuctions" class="col s12">
+        <p>Total auctions: <%= auctionsRawCount %></p>
+        <div style="overflow:auto;">
+          <table id="allTable">
+            <tr>
+              <th>アイテム名</th>
+              <th>1個あたりの平均価格</th>
+              <th>1個あたりの最高価格</th>
+              <th>1個あたりの最低価格</th>
+              <th>オークションの数</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="activeAuctions" class="col s12">
+        <p>Total auctions: <%= auctionsCount %></p>
+        <div style="overflow:auto;">
+          <table id="table">
+            <tr>
+              <th>アイテム名</th>
+              <th>1個あたりの平均価格</th>
+              <th>1個あたりの最高価格</th>
+              <th>1個あたりの最低価格</th>
+              <th>オークションの数</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div style="display: none;">
+        <table id="hiddenTable">
+          <tr>
+            <th>アイテム名</th>
+            <th>1個あたりの平均価格</th>
+            <th>1個あたりの最高価格</th>
+            <th>1個あたりの最低価格</th>
+            <th>オークションの数</th>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript">
+        const hiddenTable = document.getElementById('hiddenTable')
+        const table = document.getElementById('table')
+        auctions.forEach(auction => {
+          const tr = document.createElement('tr')
+          const itemName = document.createElement('td')
+          const aItemName = document.createElement('a')
+          aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+          aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
+          itemName.appendChild(aItemName)
+          const sellPrice = document.createElement('td')
+          sellPrice.textContent = htmlDecode(auction.sellPrice.toLocaleString())
+          const highestPrice = document.createElement('td')
+          highestPrice.textContent = htmlDecode(auction.highestPrice.toLocaleString())
+          const lowestPrice = document.createElement('td')
+          lowestPrice.textContent = htmlDecode(auction.lowestPrice.toLocaleString())
+          const activeAuctions = document.createElement('td')
+          activeAuctions.textContent = htmlDecode(auction.auctions.toLocaleString())
+          tr.appendChild(itemName)
+          tr.appendChild(sellPrice)
+          tr.appendChild(highestPrice)
+          tr.appendChild(lowestPrice)
+          tr.appendChild(activeAuctions)
+          table.appendChild(tr)
+        })
+        const allTable = document.getElementById('allTable')
+        auctionsRaw.forEach(auction => {
+          const tr = document.createElement('tr')
+          const itemName = document.createElement('td')
+          const aItemName = document.createElement('a')
+          aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+          aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
+          itemName.appendChild(aItemName)
+          const sellPrice = document.createElement('td')
+          sellPrice.textContent = htmlDecode(auction.sellPrice.toLocaleString())
+          const highestPrice = document.createElement('td')
+          highestPrice.textContent = htmlDecode(auction.highestPrice.toLocaleString())
+          const lowestPrice = document.createElement('td')
+          lowestPrice.textContent = htmlDecode(auction.lowestPrice.toLocaleString())
+          const activeAuctions = document.createElement('td')
+          activeAuctions.textContent = htmlDecode(auction.auctions.toLocaleString())
+          tr.appendChild(itemName)
+          tr.appendChild(sellPrice)
+          tr.appendChild(highestPrice)
+          tr.appendChild(lowestPrice)
+          tr.appendChild(activeAuctions)
+          allTable.appendChild(tr)
+        })
+        const tabs = document.getElementsByClassName("tabs")
+        for (let index = 0; index < tabs.length; index++) {
+          M.Tabs.init(tabs.item(index));        
+        }
+        function receivedInput() {
+          const value = document.getElementById('search').value.toLowerCase()
+          document.getElementById("table").innerHTML = hiddenTable.innerHTML
+          document.getElementById("allTable").innerHTML = hiddenTable.innerHTML
+          auctions.forEach(auction => {
+            if (auction.displayName.toLowerCase().includes(value)) {
+              const tr = document.createElement('tr')
+              const itemName = document.createElement('td')
+              const aItemName = document.createElement('a')
+              aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+              aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
+              itemName.appendChild(aItemName)
+              const sellPrice = document.createElement('td')
+              sellPrice.textContent = htmlDecode(auction.sellPrice.toLocaleString())
+              const highestPrice = document.createElement('td')
+              highestPrice.textContent = htmlDecode(auction.highestPrice.toLocaleString())
+              const lowestPrice = document.createElement('td')
+              lowestPrice.textContent = htmlDecode(auction.lowestPrice.toLocaleString())
+              const activeAuctions = document.createElement('td')
+              activeAuctions.textContent = htmlDecode(auction.auctions.toLocaleString())
+              tr.appendChild(itemName)
+              tr.appendChild(sellPrice)
+              tr.appendChild(highestPrice)
+              tr.appendChild(lowestPrice)
+              tr.appendChild(activeAuctions)
+              table.appendChild(tr)
+            }
+          })
+          auctionsRaw.forEach(auction => {
+            if (auction.displayName.toLowerCase().includes(value)) {
+              const tr = document.createElement('tr')
+              const itemName = document.createElement('td')
+              const aItemName = document.createElement('a')
+              aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+              aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
+              itemName.appendChild(aItemName)
+              const sellPrice = document.createElement('td')
+              sellPrice.textContent = htmlDecode(auction.sellPrice.toLocaleString())
+              const highestPrice = document.createElement('td')
+              highestPrice.textContent = htmlDecode(auction.highestPrice.toLocaleString())
+              const lowestPrice = document.createElement('td')
+              lowestPrice.textContent = htmlDecode(auction.lowestPrice.toLocaleString())
+              const activeAuctions = document.createElement('td')
+              activeAuctions.textContent = htmlDecode(auction.auctions.toLocaleString())
+              tr.appendChild(itemName)
+              tr.appendChild(sellPrice)
+              tr.appendChild(highestPrice)
+              tr.appendChild(lowestPrice)
+              tr.appendChild(activeAuctions)
+              allTable.appendChild(tr)
+            }
+          })
+        }
+      </script>
+    </div>
+  </body>
+</html>

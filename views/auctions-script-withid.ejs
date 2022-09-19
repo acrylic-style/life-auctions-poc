@@ -1,0 +1,12 @@
+    <!-- DO NOT OPEN THIS SCRIPT TAG OR YOUR BROWSER MIGHY CRASH -->
+    <script type="text/javascript">
+      function htmlDecode(input){
+        const e = document.createElement('textarea');
+        e.innerHTML = input;
+        let bruh = ''
+        e.childNodes.forEach(node => bruh += node.nodeValue)
+        return bruh
+      }
+      const auctions = <%- stringAuctions %>;
+      const auctionsRaw = <%- stringAuctionsRaw %>;
+    </script>
