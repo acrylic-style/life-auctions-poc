@@ -89,7 +89,7 @@ app.get('/', async (req, res, next) => {
     auctionsMapRaw[name].push(auction)
   }
   const keys2 = Object.keys(auctionsMapRaw)
-  for (let oi = 0; oi < keys.length; oi++) {
+  for (let oi = 0; oi < keys2.length; oi++) {
     const key = keys2[oi]
     if (auctionsMapRaw[key].length !== 0) {
       for (let i = 0; i < auctionsMapRaw[key].length; i++) {
