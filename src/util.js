@@ -32,7 +32,7 @@ class Util {
    */
   static async getAllAuctions(key, bypassCache = false) {
     if (!bypassCache && cache.exists('auctions/all')) return cache.getCache('auctions/all')
-    const auctions = await Util.getAPI('servers/life/auctions', key)
+    const auctions = await Util.getAPI('servers/life/auctions', key, { includeExpired: true })
     cache.setCache('auctions/all', auctions, 1000*60) // expires in a minute
     return auctions
   }
