@@ -154,7 +154,7 @@
           const tr = document.createElement('tr')
           const itemName = document.createElement('td')
           const aItemName = document.createElement('a')
-          aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+          aItemName.href = `/auctions/${encodeURI(stripColorCode(htmlDecode(auction.displayName)))}`
           aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
           itemName.appendChild(aItemName)
           const sellPrice = document.createElement('td')
@@ -177,7 +177,7 @@
           const tr = document.createElement('tr')
           const itemName = document.createElement('td')
           const aItemName = document.createElement('a')
-          aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+          aItemName.href = `/auctions/${encodeURI(stripColorCode(htmlDecode(auction.displayName)))}`
           aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
           itemName.appendChild(aItemName)
           const sellPrice = document.createElement('td')
@@ -208,7 +208,7 @@
               const tr = document.createElement('tr')
               const itemName = document.createElement('td')
               const aItemName = document.createElement('a')
-              aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+              aItemName.href = `/auctions/${encodeURI(stripColorCode(htmlDecode(auction.displayName)))}`
               aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
               itemName.appendChild(aItemName)
               const sellPrice = document.createElement('td')
@@ -232,7 +232,7 @@
               const tr = document.createElement('tr')
               const itemName = document.createElement('td')
               const aItemName = document.createElement('a')
-              aItemName.href = `/auctions/${stripColorCode(htmlDecode(auction.displayName))}`
+              aItemName.href = `/auctions/${encodeURI(stripColorCode(htmlDecode(auction.displayName)))}`
               aItemName.innerHTML = convertColorCode(htmlDecode(auction.displayName))
               itemName.appendChild(aItemName)
               const sellPrice = document.createElement('td')
